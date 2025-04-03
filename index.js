@@ -1,18 +1,18 @@
 const express = require('express');
-const routes = require('./src/routes'); // Importa las rutas definidas correctamente
-const { init } = require('./src/servicelocator/composer'); // Importa el Service Locator
+const routes = require('./src/routes'); 
+const { init } = require('./src/servicelocator/composer'); 
 const cors = require('cors');
 
 const app = express();
 const port = 5005;
 
-init(); // Inicializa las dependencias
+init(); 
 
-app.use(cors()); // Configura CORS
-app.use(express.json()); // Configura el middleware para manejar JSON
+app.use(cors()); 
+app.use(express.json()); 
 
-// Usa las rutas definidas
-app.use(routes); // Asegúrate de que 'routes' sea un enrutador y no un objeto
+
+app.use(routes); 
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
